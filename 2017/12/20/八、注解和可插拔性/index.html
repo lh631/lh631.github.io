@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Lihui</title>
+    <title>八、注解和可插拔性 | Lihui</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,15 +12,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="">
+    <meta name="description" content="八、注解和可插拔性8.1 注解@WebServlet：该注解用于在Web应用中定义Servlet组件。必须指定注解的urlPatterns或value属性。@WebFilter：该注解用于在Web应用中定义Filter。如果没有指定Filter名字则默认是全限定类名。注解的urlPatterns属性，servletNames属性或value属性必须被指定。@WebInitParam：该注解用于指定">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Lihui">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="八、注解和可插拔性 | Lihui">
+    <meta name="twitter:description" content="八、注解和可插拔性8.1 注解@WebServlet：该注解用于在Web应用中定义Servlet组件。必须指定注解的urlPatterns或value属性。@WebFilter：该注解用于在Web应用中定义Filter。如果没有指定Filter名字则默认是全限定类名。注解的urlPatterns属性，servletNames属性或value属性必须被指定。@WebInitParam：该注解用于指定">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Lihui">
-    <meta property="og:description" content="">
+    <meta property="og:title" content="八、注解和可插拔性 | Lihui">
+    <meta property="og:description" content="八、注解和可插拔性8.1 注解@WebServlet：该注解用于在Web应用中定义Servlet组件。必须指定注解的urlPatterns或value属性。@WebFilter：该注解用于在Web应用中定义Filter。如果没有指定Filter名字则默认是全限定类名。注解的urlPatterns属性，servletNames属性或value属性必须被指定。@WebInitParam：该注解用于指定">
 
     
     <meta name="author" content="Lihui">
@@ -37,7 +37,7 @@
     <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://lihui.life"/>
+    <link rel="canonical" href="http://lihui.life/2017/12/20/八、注解和可插拔性/"/>
 
                  
 </head>
@@ -140,53 +140,71 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <div class="main-post-list">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-12-20T03:16:05.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">八、注解和可插拔性</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="八、注解和可插拔性"><a href="#八、注解和可插拔性" class="headerlink" title="八、注解和可插拔性"></a>八、注解和可插拔性</h1><h2 id="8-1-注解"><a href="#8-1-注解" class="headerlink" title="8.1 注解"></a>8.1 注解</h2><p>@WebServlet：该注解用于在Web应用中定义Servlet组件。必须指定注解的urlPatterns或value属性。<br>@WebFilter：该注解用于在Web应用中定义Filter。如果没有指定Filter名字则默认是全限定类名。注解的urlPatterns属性，servletNames属性或value属性必须被指定。<br>@WebInitParam：该注解用于指定必须传递到Servlet或Filter的任何初始化参数。她是WebServlet和WebFilter注解的一个属性。<br>@WebListener：该注解用来获得特定web应用上下文中各种操作事件的监听器。</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
     
-  <ol class="post-list">
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/20/九、分派请求/" title="九、分派请求">九、分派请求</a></h2>
+                <p class="excerpt">
+                
+                九、分派请求构建Web应用时，把请求转发给另一个servlet处理、或在response中包含另一个servlet的输出通常是很有用的。RequestDispatcher接口提供了一种机制来实现这种功能。当请求启用异步处理时，AsyncContext允许用户将这个请求转发到servlet容器。
+9.
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-12-20T05:45:22.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/20/九、分派请求/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/20/七、会话/" title="七、会话">七、会话</a></h2>
+                <p class="excerpt">
+                
+                七、会话7.1 Cookies通过HTTP cookie的会话跟踪是最常用的会话跟踪机制，且所有servlet容器都应该支持。
+7.2 会话范围HTTPSession对象必须被限定在应用(或servlet上下文)级别。底层的机制，如使用cookie建立会话，不同的上下文可以是相同的，但所引用的对象，
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-12-20T02:42:23.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/20/七、会话/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
   
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2017/03/21/Spring高级装配/" title="link to post.title">Spring高级装配</a></h2>
-      <p class="excerpt">
-    
-      Spring高级装配###Profile
+</section>
 
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2017-03-21T08:04:36.000Z" class="post-list__meta--date date">2017-03-21</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/03/21/Spring高级装配/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
   
-    
-  </ol>
-
-
- <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
-        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
-        messageStyle: "none"
-    }); 
-    
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</div>
-
 
             <footer class="footer">
     <span class="footer__copyright">

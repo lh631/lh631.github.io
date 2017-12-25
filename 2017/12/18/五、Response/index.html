@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Spring高级装配 | Lihui</title>
+    <title>五、Response | Lihui</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,36 +12,33 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="Spring高级装配###Profile
+    <meta name="description" content="五、Response响应(response)对象封装了从服务器返回到客户端的所有信息。
+5.1 缓冲Servlet容器允许但不必为了提高效率而缓冲到客户端的输出。典型的服务器默认都是缓冲的，但允许servlet指定缓冲参数。ServletResponse接口的如下方法允许servlet访问和设置缓冲信息：
 
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+getBufferSize
+setBufferSize
+isCommitted
+reset">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Spring高级装配 | Lihui">
-    <meta name="twitter:description" content="Spring高级装配###Profile
+    <meta name="twitter:title" content="五、Response | Lihui">
+    <meta name="twitter:description" content="五、Response响应(response)对象封装了从服务器返回到客户端的所有信息。
+5.1 缓冲Servlet容器允许但不必为了提高效率而缓冲到客户端的输出。典型的服务器默认都是缓冲的，但允许servlet指定缓冲参数。ServletResponse接口的如下方法允许servlet访问和设置缓冲信息：
 
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+getBufferSize
+setBufferSize
+isCommitted
+reset">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Spring高级装配 | Lihui">
-    <meta property="og:description" content="Spring高级装配###Profile
+    <meta property="og:title" content="五、Response | Lihui">
+    <meta property="og:description" content="五、Response响应(response)对象封装了从服务器返回到客户端的所有信息。
+5.1 缓冲Servlet容器允许但不必为了提高效率而缓冲到客户端的输出。典型的服务器默认都是缓冲的，但允许servlet指定缓冲参数。ServletResponse接口的如下方法允许servlet访问和设置缓冲信息：
 
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+getBufferSize
+setBufferSize
+isCommitted
+reset">
 
     
     <meta name="author" content="Lihui">
@@ -58,7 +55,7 @@
     <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://lihui.life/2017/03/21/Spring高级装配/"/>
+    <link rel="canonical" href="http://lihui.life/2017/12/18/五、Response/"/>
 
                  
 </head>
@@ -165,64 +162,42 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-03-21T08:04:36.000Z" class="post-list__meta--date date">2017-03-21</time> &#8226; <span class="post-meta__tags tags">于&nbsp; </span>
+      <time datetime="2017-12-18T05:38:22.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+ </span>
       <span class="page-pv">
       &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">Spring高级装配</h1>
+    <h1 class="post-title">五、Response</h1>
   </header>
 
   <section class="post">
-    <h1 id="Spring高级装配"><a href="#Spring高级装配" class="headerlink" title="Spring高级装配"></a>Spring高级装配</h1><p>###Profile</p>
+    <h1 id="五、Response"><a href="#五、Response" class="headerlink" title="五、Response"></a>五、Response</h1><p>响应(response)对象封装了从服务器返回到客户端的所有信息。</p>
+<h2 id="5-1-缓冲"><a href="#5-1-缓冲" class="headerlink" title="5.1 缓冲"></a>5.1 缓冲</h2><p>Servlet容器允许但不必为了提高效率而缓冲到客户端的输出。典型的服务器默认都是缓冲的，但允许servlet指定缓冲参数。<br>ServletResponse接口的如下方法允许servlet访问和设置缓冲信息：</p>
 <ul>
-<li>@Profile注解      </li>
+<li>getBufferSize</li>
+<li>setBufferSize</li>
+<li>isCommitted</li>
+<li>reset</li>
+<li>resetBuffer</li>
+<li>flushBuffer</li>
 </ul>
-<blockquote>
-<p>指定某个Bean属于哪一个profole。<br>Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; spring.profile.active</div><div class="line">&gt; spring.profile.default</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<p>如果设置了spring.profile.active属性，它的值会用来确定激活哪个profile。<br>如果没有设置，spring将会查找spring.profile.default的值。<br>如果均没有设置，那就没有激活的profile。</p>
-</blockquote>
-<p>###条件化bean</p>
+<p>不管Servlet使用的是一个ServletOutputStream还是一个Writer，ServletResponse接口提供的这些方法允许执行缓冲操作。<br>getBufferSize方法返回使用的底层缓冲区大小。如果没有使用缓冲，该方法返回一个int值0。</p>
+<h2 id="5-2-简便方法"><a href="#5-2-简便方法" class="headerlink" title="5.2 简便方法"></a>5.2 简便方法</h2><p>HttpServletResponse提供了如下的简便方法：</p>
 <ul>
-<li>@Conditional注解      </li>
+<li>sendRedirect</li>
+<li>sendError</li>
 </ul>
-<blockquote>
-<p>条件化配置<br> 实现Condition类，重写matches()方法，matches方法会得到ConditionContext和AnnotatedTypeMeetadata对象<br>ConditionContext是一个接口：     </p>
-<pre><code>public interface ConditionContext
-{
-    BeanDefinitionRegistry getRegistry();
-    ConfigurableListableFactory getBeanFactory();
-    Environment getEnvironment();
-    ResourceLoader getResourceLoader();
-    ClassLoader getClassLoader();
-}
-</code></pre></blockquote>
-<p>###处理自动装配的奇异性</p>
+<p>sendRedirect方法将设置适当的header和内容体将客户端重定向到一个新地址。</p>
+<h2 id="5-3-结束响应对象"><a href="#5-3-结束响应对象" class="headerlink" title="5.3 结束响应对象"></a>5.3 结束响应对象</h2><p>当响应被关闭时，容器必须立即刷出响应缓冲区中的所有剩余的内容到客户端。<br>以下事件表明servlet满足了请求且响应对象即将关闭：</p>
 <ul>
-<li><p>@Primary注解      </p>
-<blockquote>
-<p>标示首选Bean。      </p>
-</blockquote>
-</li>
-<li><p>@Qualifier注解     </p>
-<blockquote>
-<p>使用限定符的主要方式。</p>
-</blockquote>
-</li>
-</ul>
-<p>###Bean的作用域<br>Spring定义了多种作用域，包括：</p>
-<blockquote>
-<ul>
-<li>单例(Singleton)：在整个应用中，之后创建bean的一个实例。</li>
-<li>原型(Prototype)：每次注入或者通过Spring应用上下文获取的时候，都会创建一个新的bean实例。</li>
-<li>会话(Session)：在Web应用中，为每个会话创建一个bean实例。</li>
-<li>请求(Request)：在Web应用中，为每个请求创建一个bean实例。     </li>
-</ul>
-</blockquote>
-<ul>
-<li>@Scope注解：<br>配置作用域</li>
+<li>servlet的service方法终止。</li>
+<li>响应的setContentLength或setContentLengthLong方法指定了大于零的内容量，且已经写入到响应。</li>
+<li>sendError方法已经调用。</li>
+<li>sendRedirect方法已经调用。</li>
+<li>AsyncContext的complete方法已经调用。</li>
 </ul>
 
   </section>
@@ -235,17 +210,34 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2017/05/11/hello-world/" title="Hello World">Hello World</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/18/六、过滤器/" title="六、过滤器">六、过滤器</a></h2>
                 <p class="excerpt">
                 
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+                六、过滤器过滤器(Filter)是Java组件，允许运行过程中改变进入资源的请求和资源返回的响应中的有效负载和header信息。
+6.1 什么是过滤器过滤器是一直代码重用的技术，她可以改变HTTP请求的内容，响应，已经header信息。过滤器通常不产生响应或像servlet那样对请求做出响应，而是修
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2017-05-11T01:44:12.000Z" class="post-list__meta--date date">2017-05-11</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/05/11/hello-world/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2017-12-18T08:19:53.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/18/六、过滤器/">继续阅读</a></div>
                            
             </div>
         
         
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/18/四、Servlet Context/" title="四、Servlet Context">四、Servlet Context</a></h2>
+                <p class="excerpt">
+                
+                四、Servlet Context4.1 ServletContext接口介绍ServletContext(Servlet上下文)接口定义了servlet运行在的Web应用的视图。容器供应商负责提供Servlet容器的ServletContext接口实现。Servlet可以使用ServletCont
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-12-18T03:17:25.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/18/四、Servlet Context/">继续阅读</a></div>
+                       
+            </div>
         
      
    

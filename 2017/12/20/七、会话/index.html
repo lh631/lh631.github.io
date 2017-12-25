@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Spring高级装配 | Lihui</title>
+    <title>七、会话 | Lihui</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,36 +12,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta name="description" content="七、会话7.1 Cookies通过HTTP cookie的会话跟踪是最常用的会话跟踪机制，且所有servlet容器都应该支持。
+7.2 会话范围HTTPSession对象必须被限定在应用(或servlet上下文)级别。底层的机制，如使用cookie建立会话，不同的上下文可以是相同的，但所引用的对象，包括包括该对象中的属性，绝不能在容器上下文之间共享。
+7.3 绑定Session属性servlet可">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Spring高级装配 | Lihui">
-    <meta name="twitter:description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta name="twitter:title" content="七、会话 | Lihui">
+    <meta name="twitter:description" content="七、会话7.1 Cookies通过HTTP cookie的会话跟踪是最常用的会话跟踪机制，且所有servlet容器都应该支持。
+7.2 会话范围HTTPSession对象必须被限定在应用(或servlet上下文)级别。底层的机制，如使用cookie建立会话，不同的上下文可以是相同的，但所引用的对象，包括包括该对象中的属性，绝不能在容器上下文之间共享。
+7.3 绑定Session属性servlet可">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Spring高级装配 | Lihui">
-    <meta property="og:description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta property="og:title" content="七、会话 | Lihui">
+    <meta property="og:description" content="七、会话7.1 Cookies通过HTTP cookie的会话跟踪是最常用的会话跟踪机制，且所有servlet容器都应该支持。
+7.2 会话范围HTTPSession对象必须被限定在应用(或servlet上下文)级别。底层的机制，如使用cookie建立会话，不同的上下文可以是相同的，但所引用的对象，包括包括该对象中的属性，绝不能在容器上下文之间共享。
+7.3 绑定Session属性servlet可">
 
     
     <meta name="author" content="Lihui">
@@ -58,7 +43,7 @@
     <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://lihui.life/2017/03/21/Spring高级装配/"/>
+    <link rel="canonical" href="http://lihui.life/2017/12/20/七、会话/"/>
 
                  
 </head>
@@ -165,64 +150,30 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-03-21T08:04:36.000Z" class="post-list__meta--date date">2017-03-21</time> &#8226; <span class="post-meta__tags tags">于&nbsp; </span>
+      <time datetime="2017-12-20T02:42:23.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+ </span>
       <span class="page-pv">
       &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">Spring高级装配</h1>
+    <h1 class="post-title">七、会话</h1>
   </header>
 
   <section class="post">
-    <h1 id="Spring高级装配"><a href="#Spring高级装配" class="headerlink" title="Spring高级装配"></a>Spring高级装配</h1><p>###Profile</p>
+    <h1 id="七、会话"><a href="#七、会话" class="headerlink" title="七、会话"></a>七、会话</h1><h2 id="7-1-Cookies"><a href="#7-1-Cookies" class="headerlink" title="7.1 Cookies"></a>7.1 Cookies</h2><p>通过HTTP cookie的会话跟踪是最常用的会话跟踪机制，且所有servlet容器都应该支持。</p>
+<h2 id="7-2-会话范围"><a href="#7-2-会话范围" class="headerlink" title="7.2 会话范围"></a>7.2 会话范围</h2><p>HTTPSession对象必须被限定在应用(或servlet上下文)级别。底层的机制，如使用cookie建立会话，不同的上下文可以是相同的，但所引用的对象，包括包括该对象中的属性，绝不能在容器上下文之间共享。</p>
+<h2 id="7-3-绑定Session属性"><a href="#7-3-绑定Session属性" class="headerlink" title="7.3 绑定Session属性"></a>7.3 绑定Session属性</h2><p>servlet可以按名称绑定对象属性到HttpSession实现，任何绑定到会有的对象可用于任意其他的Servlet，其属性同一个ServletContext且处理属于相同会话中的请求。<br>一些对象可能需要在他们被放进会话或从会话中移除时得到通知。这些信息可用从HttpSessionBindingListener接口实现的对象中获取。这个接口定义了一下方法，用于标识一个对象被绑定到会话或从会话解除绑定时。</p>
 <ul>
-<li>@Profile注解      </li>
+<li>valueBound</li>
+<li>valueUnbound</li>
 </ul>
-<blockquote>
-<p>指定某个Bean属于哪一个profole。<br>Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; spring.profile.active</div><div class="line">&gt; spring.profile.default</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<p>如果设置了spring.profile.active属性，它的值会用来确定激活哪个profile。<br>如果没有设置，spring将会查找spring.profile.default的值。<br>如果均没有设置，那就没有激活的profile。</p>
-</blockquote>
-<p>###条件化bean</p>
+<h2 id="7-4-分布式环境"><a href="#7-4-分布式环境" class="headerlink" title="7.4 分布式环境"></a>7.4 分布式环境</h2><p>在一个标识为分布式的应用程序中，会话中的所有请求在同一时间必须仅被一个JVM处理。容器必须能够使用适当的setAttribute或putValue方法把所有对象放入到HttpSession类实例。以下限制被强加来满足这些条件：</p>
 <ul>
-<li>@Conditional注解      </li>
-</ul>
-<blockquote>
-<p>条件化配置<br> 实现Condition类，重写matches()方法，matches方法会得到ConditionContext和AnnotatedTypeMeetadata对象<br>ConditionContext是一个接口：     </p>
-<pre><code>public interface ConditionContext
-{
-    BeanDefinitionRegistry getRegistry();
-    ConfigurableListableFactory getBeanFactory();
-    Environment getEnvironment();
-    ResourceLoader getResourceLoader();
-    ClassLoader getClassLoader();
-}
-</code></pre></blockquote>
-<p>###处理自动装配的奇异性</p>
-<ul>
-<li><p>@Primary注解      </p>
-<blockquote>
-<p>标示首选Bean。      </p>
-</blockquote>
-</li>
-<li><p>@Qualifier注解     </p>
-<blockquote>
-<p>使用限定符的主要方式。</p>
-</blockquote>
-</li>
-</ul>
-<p>###Bean的作用域<br>Spring定义了多种作用域，包括：</p>
-<blockquote>
-<ul>
-<li>单例(Singleton)：在整个应用中，之后创建bean的一个实例。</li>
-<li>原型(Prototype)：每次注入或者通过Spring应用上下文获取的时候，都会创建一个新的bean实例。</li>
-<li>会话(Session)：在Web应用中，为每个会话创建一个bean实例。</li>
-<li>请求(Request)：在Web应用中，为每个请求创建一个bean实例。     </li>
-</ul>
-</blockquote>
-<ul>
-<li>@Scope注解：<br>配置作用域</li>
+<li>容器必须接受实现了Serializable接口的对象。</li>
+<li>容器可以选择支持其他指定对象存储在HttpSession中。</li>
+<li>由特定容器的设施处理会话迁移。</li>
 </ul>
 
   </section>
@@ -235,17 +186,34 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2017/05/11/hello-world/" title="Hello World">Hello World</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/20/八、注解和可插拔性/" title="八、注解和可插拔性">八、注解和可插拔性</a></h2>
                 <p class="excerpt">
                 
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+                八、注解和可插拔性8.1 注解@WebServlet：该注解用于在Web应用中定义Servlet组件。必须指定注解的urlPatterns或value属性。@WebFilter：该注解用于在Web应用中定义Filter。如果没有指定Filter名字则默认是全限定类名。注解的urlPatterns属性
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2017-05-11T01:44:12.000Z" class="post-list__meta--date date">2017-05-11</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/05/11/hello-world/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2017-12-20T03:16:05.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/20/八、注解和可插拔性/">继续阅读</a></div>
                            
             </div>
         
         
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/18/六、过滤器/" title="六、过滤器">六、过滤器</a></h2>
+                <p class="excerpt">
+                
+                六、过滤器过滤器(Filter)是Java组件，允许运行过程中改变进入资源的请求和资源返回的响应中的有效负载和header信息。
+6.1 什么是过滤器过滤器是一直代码重用的技术，她可以改变HTTP请求的内容，响应，已经header信息。过滤器通常不产生响应或像servlet那样对请求做出响应，而是修
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-12-18T08:19:53.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/18/六、过滤器/">继续阅读</a></div>
+                       
+            </div>
         
      
    

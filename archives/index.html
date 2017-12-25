@@ -37,7 +37,7 @@
     <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://yoursite.com"/>
+    <link rel="canonical" href="http://lihui.life"/>
 
                  
 </head>
@@ -146,39 +146,177 @@
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2017/05/11/hello-world/" title="link to post.title">Hello World</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/21/十、应用生命周期事件/" title="link to post.title">十、应用生命周期事件</a></h2>
       <p class="excerpt">
     
-      Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+      十、应用生命周期事件10.1 事件监听器应用事件监听器是实现一个或多个Servlet事件监听器接口的类。Servlet事件监听器支持在ServletContext、HttpSession和ServletRequest状态改变时进行事件通知。
+事件类型和监听接口
+Servlet上下文事件：| 事件类型 | 描述 | 监听器接口 || — | — | — || 生命周期 | Servlet上下文刚刚创
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2017-05-11T01:44:12.000Z" class="post-list__meta--date date">2017-05-11</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/05/11/hello-world/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2017-12-21T02:15:19.000Z" class="post-list__meta--date date">2017-12-21</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/21/十、应用生命周期事件/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2017/03/21/Spring高级装配/" title="link to post.title">Spring高级装配</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/20/九、分派请求/" title="link to post.title">九、分派请求</a></h2>
       <p class="excerpt">
     
-      Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激
+      九、分派请求构建Web应用时，把请求转发给另一个servlet处理、或在response中包含另一个servlet的输出通常是很有用的。RequestDispatcher接口提供了一种机制来实现这种功能。当请求启用异步处理时，AsyncContext允许用户将这个请求转发到servlet容器。
+9.1 获得一个RequestDispatcher实现RequestDispatcher接口的对象，可以
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2017-03-21T08:04:36.000Z" class="post-list__meta--date date">2017-03-21</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/03/21/Spring高级装配/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2017-12-20T05:45:22.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/20/九、分派请求/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/20/八、注解和可插拔性/" title="link to post.title">八、注解和可插拔性</a></h2>
+      <p class="excerpt">
+    
+      八、注解和可插拔性8.1 注解@WebServlet：该注解用于在Web应用中定义Servlet组件。必须指定注解的urlPatterns或value属性。@WebFilter：该注解用于在Web应用中定义Filter。如果没有指定Filter名字则默认是全限定类名。注解的urlPatterns属性，servletNames属性或value属性必须被指定。@WebInitParam：该注解用于指定
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-20T03:16:05.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/20/八、注解和可插拔性/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/20/七、会话/" title="link to post.title">七、会话</a></h2>
+      <p class="excerpt">
+    
+      七、会话7.1 Cookies通过HTTP cookie的会话跟踪是最常用的会话跟踪机制，且所有servlet容器都应该支持。
+7.2 会话范围HTTPSession对象必须被限定在应用(或servlet上下文)级别。底层的机制，如使用cookie建立会话，不同的上下文可以是相同的，但所引用的对象，包括包括该对象中的属性，绝不能在容器上下文之间共享。
+7.3 绑定Session属性servlet可
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-20T02:42:23.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/20/七、会话/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/18/六、过滤器/" title="link to post.title">六、过滤器</a></h2>
+      <p class="excerpt">
+    
+      六、过滤器过滤器(Filter)是Java组件，允许运行过程中改变进入资源的请求和资源返回的响应中的有效负载和header信息。
+6.1 什么是过滤器过滤器是一直代码重用的技术，她可以改变HTTP请求的内容，响应，已经header信息。过滤器通常不产生响应或像servlet那样对请求做出响应，而是修改或调整到资源的请求，修改或调整来自资源的响应。过滤器可以作用于动态或者静态内容。过滤器的功能有以下
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-18T08:19:53.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/18/六、过滤器/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/18/五、Response/" title="link to post.title">五、Response</a></h2>
+      <p class="excerpt">
+    
+      五、Response响应(response)对象封装了从服务器返回到客户端的所有信息。
+5.1 缓冲Servlet容器允许但不必为了提高效率而缓冲到客户端的输出。典型的服务器默认都是缓冲的，但允许servlet指定缓冲参数。ServletResponse接口的如下方法允许servlet访问和设置缓冲信息：
+
+getBufferSize
+setBufferSize
+isCommitted
+reset
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-18T05:38:22.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/18/五、Response/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/18/四、Servlet Context/" title="link to post.title">四、Servlet Context</a></h2>
+      <p class="excerpt">
+    
+      四、Servlet Context4.1 ServletContext接口介绍ServletContext(Servlet上下文)接口定义了servlet运行在的Web应用的视图。容器供应商负责提供Servlet容器的ServletContext接口实现。Servlet可以使用ServletContext对象记录事件，获取URL引用的资源，存取当前上下文的其他Servlet可以访问的属性。Serv
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-18T03:17:25.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/18/四、Servlet Context/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/15/三、Request/" title="link to post.title">三、Request</a></h2>
+      <p class="excerpt">
+    
+      三、Request3.1 HTTP协议参数servlet的请求参数以字符串的形式作为请求的一部分从客户端发送的servlet容器。当请求是一个HttpServletRequest对象，容器从URI查询字符串和POST数据中填充参数，ServletRequest接口的下列方法可以返回这些参数：
+
+getParameter
+getParameterNames
+getParameterValues
+ge
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-15T07:19:35.000Z" class="post-list__meta--date date">2017-12-15</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/15/三、Request/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/13/二、Servlet接口/" title="link to post.title">二、Servlet接口</a></h2>
+      <p class="excerpt">
+    
+      二、Servlet接口Servlet接口是Java Servlet API的核心抽象。所有的Servlet类必须直接或间接的实现该接口。
+2.1 请求处理方法Servlet基础接口定义了用于客户端请求处理的service方法。当有请求到达时，该方法有servlet容器路由到一个servlet实例。
+Servlet默认是线程不安全的。
+2.1.1 基于Http规范的请求处理方法HttpServlet
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-13T14:01:34.000Z" class="post-list__meta--date date">2017-12-13</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/13/二、Servlet接口/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/11/一、Servlet概述/" title="link to post.title">一、Servlet概述</a></h2>
+      <p class="excerpt">
+    
+      一、Servlet概述1.1 什么是ServletServlet是基于Java技术的web组件，容器托管的，用于生成动态内容。
+1.2 什么是Servlet容器Servlet容器是web server或application server的一部分，提供基于请求/响应发送模型的网络服务，解码基于MIME的请求，并且格式化基于MIME的x响应。Servlet容器也包含了管理Servlet生命周期。
+S
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2017-12-11T03:19:38.000Z" class="post-list__meta--date date">2017-12-11</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/11/一、Servlet概述/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
   </ol>
 
+
+  <nav class="pagination" role="navigation">
+    
+    <span class="pagination__page-number" > 1 / 2 </span>
+    
+      <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/archives/page/2/">更早 →</a>
+    
+  </nav>
 
  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },

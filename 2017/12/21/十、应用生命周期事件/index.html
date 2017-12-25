@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Spring高级装配 | Lihui</title>
+    <title>十、应用生命周期事件 | Lihui</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,36 +12,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta name="description" content="十、应用生命周期事件10.1 事件监听器应用事件监听器是实现一个或多个Servlet事件监听器接口的类。Servlet事件监听器支持在ServletContext、HttpSession和ServletRequest状态改变时进行事件通知。
+事件类型和监听接口
+Servlet上下文事件：| 事件类型 | 描述 | 监听器接口 || — | — | — || 生命周期 | Servlet上下文刚刚创">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Spring高级装配 | Lihui">
-    <meta name="twitter:description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta name="twitter:title" content="十、应用生命周期事件 | Lihui">
+    <meta name="twitter:description" content="十、应用生命周期事件10.1 事件监听器应用事件监听器是实现一个或多个Servlet事件监听器接口的类。Servlet事件监听器支持在ServletContext、HttpSession和ServletRequest状态改变时进行事件通知。
+事件类型和监听接口
+Servlet上下文事件：| 事件类型 | 描述 | 监听器接口 || — | — | — || 生命周期 | Servlet上下文刚刚创">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Spring高级装配 | Lihui">
-    <meta property="og:description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta property="og:title" content="十、应用生命周期事件 | Lihui">
+    <meta property="og:description" content="十、应用生命周期事件10.1 事件监听器应用事件监听器是实现一个或多个Servlet事件监听器接口的类。Servlet事件监听器支持在ServletContext、HttpSession和ServletRequest状态改变时进行事件通知。
+事件类型和监听接口
+Servlet上下文事件：| 事件类型 | 描述 | 监听器接口 || — | — | — || 生命周期 | Servlet上下文刚刚创">
 
     
     <meta name="author" content="Lihui">
@@ -58,7 +43,7 @@
     <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://lihui.life/2017/03/21/Spring高级装配/"/>
+    <link rel="canonical" href="http://lihui.life/2017/12/21/十、应用生命周期事件/"/>
 
                  
 </head>
@@ -165,65 +150,85 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-03-21T08:04:36.000Z" class="post-list__meta--date date">2017-03-21</time> &#8226; <span class="post-meta__tags tags">于&nbsp; </span>
+      <time datetime="2017-12-21T02:15:19.000Z" class="post-list__meta--date date">2017-12-21</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+ </span>
       <span class="page-pv">
       &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">Spring高级装配</h1>
+    <h1 class="post-title">十、应用生命周期事件</h1>
   </header>
 
   <section class="post">
-    <h1 id="Spring高级装配"><a href="#Spring高级装配" class="headerlink" title="Spring高级装配"></a>Spring高级装配</h1><p>###Profile</p>
-<ul>
-<li>@Profile注解      </li>
-</ul>
-<blockquote>
-<p>指定某个Bean属于哪一个profole。<br>Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; spring.profile.active</div><div class="line">&gt; spring.profile.default</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<p>如果设置了spring.profile.active属性，它的值会用来确定激活哪个profile。<br>如果没有设置，spring将会查找spring.profile.default的值。<br>如果均没有设置，那就没有激活的profile。</p>
-</blockquote>
-<p>###条件化bean</p>
-<ul>
-<li>@Conditional注解      </li>
-</ul>
-<blockquote>
-<p>条件化配置<br> 实现Condition类，重写matches()方法，matches方法会得到ConditionContext和AnnotatedTypeMeetadata对象<br>ConditionContext是一个接口：     </p>
-<pre><code>public interface ConditionContext
-{
-    BeanDefinitionRegistry getRegistry();
-    ConfigurableListableFactory getBeanFactory();
-    Environment getEnvironment();
-    ResourceLoader getResourceLoader();
-    ClassLoader getClassLoader();
-}
-</code></pre></blockquote>
-<p>###处理自动装配的奇异性</p>
-<ul>
-<li><p>@Primary注解      </p>
-<blockquote>
-<p>标示首选Bean。      </p>
-</blockquote>
-</li>
-<li><p>@Qualifier注解     </p>
-<blockquote>
-<p>使用限定符的主要方式。</p>
-</blockquote>
-</li>
-</ul>
-<p>###Bean的作用域<br>Spring定义了多种作用域，包括：</p>
-<blockquote>
-<ul>
-<li>单例(Singleton)：在整个应用中，之后创建bean的一个实例。</li>
-<li>原型(Prototype)：每次注入或者通过Spring应用上下文获取的时候，都会创建一个新的bean实例。</li>
-<li>会话(Session)：在Web应用中，为每个会话创建一个bean实例。</li>
-<li>请求(Request)：在Web应用中，为每个请求创建一个bean实例。     </li>
-</ul>
-</blockquote>
-<ul>
-<li>@Scope注解：<br>配置作用域</li>
-</ul>
+    <h1 id="十、应用生命周期事件"><a href="#十、应用生命周期事件" class="headerlink" title="十、应用生命周期事件"></a>十、应用生命周期事件</h1><h2 id="10-1-事件监听器"><a href="#10-1-事件监听器" class="headerlink" title="10.1 事件监听器"></a>10.1 事件监听器</h2><p>应用事件监听器是实现一个或多个Servlet事件监听器接口的类。<br>Servlet事件监听器支持在ServletContext、HttpSession和ServletRequest状态改变时进行事件通知。</p>
+<p>事件类型和监听接口</p>
+<p>Servlet上下文事件：<br>| 事件类型 | 描述 | 监听器接口 |<br>| — | — | — |<br>| 生命周期 | Servlet上下文刚刚创建并可用于服务它的第一个请求，或者Servlet上下文即将关闭 | javax.servlet.ServletContextListener |<br>| 更改属性 | 在Servlet上下文的属性已添加、删除或替换。 | javax.servlet.ServletContextAttributeListener |</p>
+<p>HTTP会话事件：</p>
+<table>
+<thead>
+<tr>
+<th>事件类型</th>
+<th>描述</th>
+<th>监听器接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生命周期</td>
+<td>会话已创建、销毁或超时。</td>
+<td>javax.servlet.http.HttpSessionListener</td>
+</tr>
+<tr>
+<td>更改属性</td>
+<td>已经在HttpSession上添加、移除或替换属性。</td>
+<td>javax.servlet.http.HttpSessionAttributeListener</td>
+</tr>
+<tr>
+<td>改变ID</td>
+<td>HttpSession的ID将被改变</td>
+<td>javax.servlethttp.HttpSessionIdListener</td>
+</tr>
+<tr>
+<td>会话迁移</td>
+<td>HttpSession已被激活或钝化。</td>
+<td>javax.servlet.http.HttpSessionActivationListener</td>
+</tr>
+<tr>
+<td>对象绑定</td>
+<td>对象已经从HttpSession绑定或解除绑定</td>
+<td>javax.servlet.http.HttpSessionBindingListener</td>
+</tr>
+</tbody>
+</table>
+<p>Servlet请求事件:</p>
+<table>
+<thead>
+<tr>
+<th>事件类型</th>
+<th>描述</th>
+<th>监听器接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生命周期</td>
+<td>一个servlet请求已经开始由Web组件处理。</td>
+<td>javax.servlet.ServletRequestListener</td>
+</tr>
+<tr>
+<td>更改属性</td>
+<td>已经在ServletRequest上添加、移除或替换属性。</td>
+<td>javax.servlet.ServletRequestAttributeListener</td>
+</tr>
+<tr>
+<td>异步事件</td>
+<td>超时、连接终止或完成异步处理</td>
+<td>javax.servlet.AsyncListener</td>
+</tr>
+</tbody>
+</table>
 
   </section>
 
@@ -232,20 +237,23 @@
 <section class="read-more">
            
     
+        
+        
                
             <div class="read-more-item">
-                <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2017/05/11/hello-world/" title="Hello World">Hello World</a></h2>
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/20/九、分派请求/" title="九、分派请求">九、分派请求</a></h2>
                 <p class="excerpt">
                 
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+                九、分派请求构建Web应用时，把请求转发给另一个servlet处理、或在response中包含另一个servlet的输出通常是很有用的。RequestDispatcher接口提供了一种机制来实现这种功能。当请求启用异步处理时，AsyncContext允许用户将这个请求转发到servlet容器。
+9.
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2017-05-11T01:44:12.000Z" class="post-list__meta--date date">2017-05-11</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/05/11/hello-world/">继续阅读</a></div>
-                           
+                <div class="post-list__meta"><time datetime="2017-12-20T05:45:22.000Z" class="post-list__meta--date date">2017-12-20</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/20/九、分派请求/">继续阅读</a></div>
+                       
             </div>
-        
-        
         
      
    

@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Spring高级装配 | Lihui</title>
+    <title>一、Servlet概述 | Lihui</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,36 +12,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta name="description" content="一、Servlet概述1.1 什么是ServletServlet是基于Java技术的web组件，容器托管的，用于生成动态内容。
+1.2 什么是Servlet容器Servlet容器是web server或application server的一部分，提供基于请求/响应发送模型的网络服务，解码基于MIME的请求，并且格式化基于MIME的x响应。Servlet容器也包含了管理Servlet生命周期。
+S">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Spring高级装配 | Lihui">
-    <meta name="twitter:description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta name="twitter:title" content="一、Servlet概述 | Lihui">
+    <meta name="twitter:description" content="一、Servlet概述1.1 什么是ServletServlet是基于Java技术的web组件，容器托管的，用于生成动态内容。
+1.2 什么是Servlet容器Servlet容器是web server或application server的一部分，提供基于请求/响应发送模型的网络服务，解码基于MIME的请求，并且格式化基于MIME的x响应。Servlet容器也包含了管理Servlet生命周期。
+S">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Spring高级装配 | Lihui">
-    <meta property="og:description" content="Spring高级装配###Profile
-
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.default&amp;gt;
-如果设置了spring.profile.active属性，它的值会用来确定激">
+    <meta property="og:title" content="一、Servlet概述 | Lihui">
+    <meta property="og:description" content="一、Servlet概述1.1 什么是ServletServlet是基于Java技术的web组件，容器托管的，用于生成动态内容。
+1.2 什么是Servlet容器Servlet容器是web server或application server的一部分，提供基于请求/响应发送模型的网络服务，解码基于MIME的请求，并且格式化基于MIME的x响应。Servlet容器也包含了管理Servlet生命周期。
+S">
 
     
     <meta name="author" content="Lihui">
@@ -58,7 +43,7 @@
     <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://lihui.life/2017/03/21/Spring高级装配/"/>
+    <link rel="canonical" href="http://lihui.life/2017/12/11/一、Servlet概述/"/>
 
                  
 </head>
@@ -165,65 +150,22 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-03-21T08:04:36.000Z" class="post-list__meta--date date">2017-03-21</time> &#8226; <span class="post-meta__tags tags">于&nbsp; </span>
+      <time datetime="2017-12-11T03:19:38.000Z" class="post-list__meta--date date">2017-12-11</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+ </span>
       <span class="page-pv">
       &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">Spring高级装配</h1>
+    <h1 class="post-title">一、Servlet概述</h1>
   </header>
 
   <section class="post">
-    <h1 id="Spring高级装配"><a href="#Spring高级装配" class="headerlink" title="Spring高级装配"></a>Spring高级装配</h1><p>###Profile</p>
-<ul>
-<li>@Profile注解      </li>
-</ul>
-<blockquote>
-<p>指定某个Bean属于哪一个profole。<br>Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; spring.profile.active</div><div class="line">&gt; spring.profile.default</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<p>如果设置了spring.profile.active属性，它的值会用来确定激活哪个profile。<br>如果没有设置，spring将会查找spring.profile.default的值。<br>如果均没有设置，那就没有激活的profile。</p>
-</blockquote>
-<p>###条件化bean</p>
-<ul>
-<li>@Conditional注解      </li>
-</ul>
-<blockquote>
-<p>条件化配置<br> 实现Condition类，重写matches()方法，matches方法会得到ConditionContext和AnnotatedTypeMeetadata对象<br>ConditionContext是一个接口：     </p>
-<pre><code>public interface ConditionContext
-{
-    BeanDefinitionRegistry getRegistry();
-    ConfigurableListableFactory getBeanFactory();
-    Environment getEnvironment();
-    ResourceLoader getResourceLoader();
-    ClassLoader getClassLoader();
-}
-</code></pre></blockquote>
-<p>###处理自动装配的奇异性</p>
-<ul>
-<li><p>@Primary注解      </p>
-<blockquote>
-<p>标示首选Bean。      </p>
-</blockquote>
-</li>
-<li><p>@Qualifier注解     </p>
-<blockquote>
-<p>使用限定符的主要方式。</p>
-</blockquote>
-</li>
-</ul>
-<p>###Bean的作用域<br>Spring定义了多种作用域，包括：</p>
-<blockquote>
-<ul>
-<li>单例(Singleton)：在整个应用中，之后创建bean的一个实例。</li>
-<li>原型(Prototype)：每次注入或者通过Spring应用上下文获取的时候，都会创建一个新的bean实例。</li>
-<li>会话(Session)：在Web应用中，为每个会话创建一个bean实例。</li>
-<li>请求(Request)：在Web应用中，为每个请求创建一个bean实例。     </li>
-</ul>
-</blockquote>
-<ul>
-<li>@Scope注解：<br>配置作用域</li>
-</ul>
+    <h1 id="一、Servlet概述"><a href="#一、Servlet概述" class="headerlink" title="一、Servlet概述"></a>一、Servlet概述</h1><h2 id="1-1-什么是Servlet"><a href="#1-1-什么是Servlet" class="headerlink" title="1.1 什么是Servlet"></a>1.1 什么是Servlet</h2><p>Servlet是基于Java技术的web组件，容器托管的，用于生成动态内容。</p>
+<h2 id="1-2-什么是Servlet容器"><a href="#1-2-什么是Servlet容器" class="headerlink" title="1.2 什么是Servlet容器"></a>1.2 什么是Servlet容器</h2><p>Servlet容器是web server或application server的一部分，提供基于请求/响应发送模型的网络服务，解码基于MIME的请求，并且格式化基于MIME的x响应。Servlet容器也包含了管理Servlet生命周期。</p>
+<p>Servlet例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 客户端发送一个HTTP请求到web服务器；</div><div class="line">2. Web服务器接收请求并交给Servlet容器处理，servlet容器可以运行在与宿主web服务器同一个进程中，也可以是同一主机的不同进程，或者位于不同的主机的web服务器，对请求进行处理。</div><div class="line">3. Servlet容器根据servlet配置选择相应的servlet，并使用代表请求和响应对象的参数进行调用。</div><div class="line">4. Servlet通过请求对象得到远程用户，HTTP POST参数和其他有关数据可能作为请求的一部分随请求一起发送过来。Servlet执行我们编写的任意的逻辑，然后动态产生响应内容发送回客户端。发送请求数据到客户端是通过响应对象完成的。</div><div class="line">5. 一旦servlet完成请求的处理，servlet容器必须确保响应的正确输出，并将控制权还给web服务器。</div></pre></td></tr></table></figure>
 
   </section>
 
@@ -235,6 +177,24 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/13/二、Servlet接口/" title="二、Servlet接口">二、Servlet接口</a></h2>
+                <p class="excerpt">
+                
+                二、Servlet接口Servlet接口是Java Servlet API的核心抽象。所有的Servlet类必须直接或间接的实现该接口。
+2.1 请求处理方法Servlet基础接口定义了用于客户端请求处理的service方法。当有请求到达时，该方法有servlet容器路由到一个servlet实例。
+
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-12-13T14:01:34.000Z" class="post-list__meta--date date">2017-12-13</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/13/二、Servlet接口/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
                 <h2 class="post-list__post-title post-title"><a href="/2017/05/11/hello-world/" title="Hello World">Hello World</a></h2>
                 <p class="excerpt">
                 
@@ -242,10 +202,8 @@
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2017-05-11T01:44:12.000Z" class="post-list__meta--date date">2017-05-11</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/05/11/hello-world/">继续阅读</a></div>
-                           
+                       
             </div>
-        
-        
         
      
    

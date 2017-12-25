@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Hello World | Lihui</title>
+    <title>四、Servlet Context | Lihui</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -12,18 +12,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="四、Servlet Context4.1 ServletContext接口介绍ServletContext(Servlet上下文)接口定义了servlet运行在的Web应用的视图。容器供应商负责提供Servlet容器的ServletContext接口实现。Servlet可以使用ServletContext对象记录事件，获取URL引用的资源，存取当前上下文的其他Servlet可以访问的属性。Serv">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Hello World | Lihui">
-    <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="twitter:title" content="四、Servlet Context | Lihui">
+    <meta name="twitter:description" content="四、Servlet Context4.1 ServletContext接口介绍ServletContext(Servlet上下文)接口定义了servlet运行在的Web应用的视图。容器供应商负责提供Servlet容器的ServletContext接口实现。Servlet可以使用ServletContext对象记录事件，获取URL引用的资源，存取当前上下文的其他Servlet可以访问的属性。Serv">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Hello World | Lihui">
-    <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta property="og:title" content="四、Servlet Context | Lihui">
+    <meta property="og:description" content="四、Servlet Context4.1 ServletContext接口介绍ServletContext(Servlet上下文)接口定义了servlet运行在的Web应用的视图。容器供应商负责提供Servlet容器的ServletContext接口实现。Servlet可以使用ServletContext对象记录事件，获取URL引用的资源，存取当前上下文的其他Servlet可以访问的属性。Serv">
 
     
     <meta name="author" content="Lihui">
@@ -40,7 +37,7 @@ Quick">
     <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
     
 
-    <link rel="canonical" href="http://lihui.life/2017/05/11/hello-world/"/>
+    <link rel="canonical" href="http://lihui.life/2017/12/18/四、Servlet Context/"/>
 
                  
 </head>
@@ -147,25 +144,26 @@ Quick">
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-05-11T01:44:12.000Z" class="post-list__meta--date date">2017-05-11</time> &#8226; <span class="post-meta__tags tags">于&nbsp; </span>
+      <time datetime="2017-12-18T03:17:25.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+ </span>
       <span class="page-pv">
       &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title">Hello World</h1>
+    <h1 class="post-title">四、Servlet Context</h1>
   </header>
 
   <section class="post">
-    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <h1 id="四、Servlet-Context"><a href="#四、Servlet-Context" class="headerlink" title="四、Servlet Context"></a>四、Servlet Context</h1><h2 id="4-1-ServletContext接口介绍"><a href="#4-1-ServletContext接口介绍" class="headerlink" title="4.1 ServletContext接口介绍"></a>4.1 ServletContext接口介绍</h2><p>ServletContext(Servlet上下文)接口定义了servlet运行在的Web应用的视图。容器供应商负责提供Servlet容器的ServletContext接口实现。Servlet可以使用ServletContext对象记录事件，获取URL引用的资源，存取当前上下文的其他Servlet可以访问的属性。<br>ServletContext是Web服务器中已知路径的根。</p>
+<h2 id="4-2-ServletContext接口的作用范围"><a href="#4-2-ServletContext接口的作用范围" class="headerlink" title="4.2 ServletContext接口的作用范围"></a>4.2 ServletContext接口的作用范围</h2><p>每一个不是到容器的Web应用都有一个Servlet接口的实例与之关联。在容器分布在多台虚拟机的情况下，每个JVM的每个Web应用将有一个ServletContext实例。<br>如果容器内的Servlet没有部署到Web应用中，则隐含的作为“默认”Web应用的一部分，并有一个默认的ServletContext。在分布式的容器中，默认的ServletContext是非分布式的且仅存在于一个JVM中。</p>
+<h2 id="4-3-初始化参数"><a href="#4-3-初始化参数" class="headerlink" title="4.3 初始化参数"></a>4.3 初始化参数</h2><p>ServletContext接口方法允许Servlet访问由应用开发人员在Web应用中的部署描述符中指定的上下文初始化参数：</p>
+<ul>
+<li>getInitParameter</li>
+<li>getInitParameterNames<br>应用开发人员使用初始化参数来表达配置信息。</li>
+</ul>
+<h2 id="4-4-多主机和Servlet上下文"><a href="#4-4-多主机和Servlet上下文" class="headerlink" title="4.4 多主机和Servlet上下文"></a>4.4 多主机和Servlet上下文</h2><p>Web服务器可以支持多个逻辑主机共享一个服务器IP地址。有时，这种能力被称为“虚拟主机”。这种情况下，每一个逻辑主机必须有她自己的上下文或者一组上下文。Servlet上下文不会在虚拟主机之间共享。<br>ServletContext接口的getVirtualServerName方法允许访问ServletContext部署在的逻辑主机的配置名字。该方法必须对所有部署在逻辑主机上的所有servlet context返回同一个名字。并且方法返回的名字必须是明确的、每个逻辑主机稳定的、和适合用于关联服务器配置信息和逻辑主机。</p>
 
   </section>
 
@@ -177,16 +175,16 @@ Quick">
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2017/12/11/一、Servlet概述/" title="一、Servlet概述">一、Servlet概述</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/18/五、Response/" title="五、Response">五、Response</a></h2>
                 <p class="excerpt">
                 
-                一、Servlet概述1.1 什么是ServletServlet是基于Java技术的web组件，容器托管的，用于生成动态内容。
-1.2 什么是Servlet容器Servlet容器是web server或application server的一部分，提供基于请求/响应发送模型的网络服务，解码基于MIM
+                五、Response响应(response)对象封装了从服务器返回到客户端的所有信息。
+5.1 缓冲Servlet容器允许但不必为了提高效率而缓冲到客户端的输出。典型的服务器默认都是缓冲的，但允许servlet指定缓冲参数。ServletResponse接口的如下方法允许servlet访问和设置缓冲
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2017-12-11T03:19:38.000Z" class="post-list__meta--date date">2017-12-11</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+                <div class="post-list__meta"><time datetime="2017-12-18T05:38:22.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
   <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
-</span><a class="btn-border-small" href="/2017/12/11/一、Servlet概述/">继续阅读</a></div>
+</span><a class="btn-border-small" href="/2017/12/18/五、Response/">继续阅读</a></div>
                            
             </div>
         
@@ -194,19 +192,17 @@ Quick">
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2017/03/21/Spring高级装配/" title="Spring高级装配">Spring高级装配</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/15/三、Request/" title="三、Request">三、Request</a></h2>
                 <p class="excerpt">
                 
-                Spring高级装配###Profile
+                三、Request3.1 HTTP协议参数servlet的请求参数以字符串的形式作为请求的一部分从客户端发送的servlet容器。当请求是一个HttpServletRequest对象，容器从URI查询字符串和POST数据中填充参数，ServletRequest接口的下列方法可以返回这些参数：
 
-@Profile注解      
-
-
-指定某个Bean属于哪一个profole。Spring在确定哪个profile处于激活状态时，需要依赖两个独立的属性：
-123&amp;gt; spring.profile.active&amp;gt; spring.profile.
+ge
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2017-03-21T08:04:36.000Z" class="post-list__meta--date date">2017-03-21</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2017/03/21/Spring高级装配/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2017-12-15T07:19:35.000Z" class="post-list__meta--date date">2017-12-15</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/15/三、Request/">继续阅读</a></div>
                        
             </div>
         

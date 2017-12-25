@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>三、Request | Lihui</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="三、Request3.1 HTTP协议参数servlet的请求参数以字符串的形式作为请求的一部分从客户端发送的servlet容器。当请求是一个HttpServletRequest对象，容器从URI查询字符串和POST数据中填充参数，ServletRequest接口的下列方法可以返回这些参数：
+
+getParameter
+getParameterNames
+getParameterValues
+ge">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="三、Request | Lihui">
+    <meta name="twitter:description" content="三、Request3.1 HTTP协议参数servlet的请求参数以字符串的形式作为请求的一部分从客户端发送的servlet容器。当请求是一个HttpServletRequest对象，容器从URI查询字符串和POST数据中填充参数，ServletRequest接口的下列方法可以返回这些参数：
+
+getParameter
+getParameterNames
+getParameterValues
+ge">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="三、Request | Lihui">
+    <meta property="og:description" content="三、Request3.1 HTTP协议参数servlet的请求参数以字符串的形式作为请求的一部分从客户端发送的servlet容器。当请求是一个HttpServletRequest对象，容器从URI查询字符串和POST数据中填充参数，ServletRequest接口的下列方法可以返回这些参数：
+
+getParameter
+getParameterNames
+getParameterValues
+ge">
+
+    
+    <meta name="author" content="Lihui">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="Lihui" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://lihui.life/2017/12/15/三、Request/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Lihui 的主页"><img src="/images/avatar.jpg" width="80" alt="Lihui logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Lihui">Lihui</a></h1>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description"></p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/favourite">黄金屋</a></li>
+            
+              <li class="navigation__item"><a href="/favourite/time.html">时光机</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/lh631" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com/onlymonniya" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-12-15T07:19:35.000Z" class="post-list__meta--date date">2017-12-15</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">三、Request</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="三、Request"><a href="#三、Request" class="headerlink" title="三、Request"></a>三、Request</h1><h2 id="3-1-HTTP协议参数"><a href="#3-1-HTTP协议参数" class="headerlink" title="3.1 HTTP协议参数"></a>3.1 HTTP协议参数</h2><p>servlet的请求参数以字符串的形式作为请求的一部分从客户端发送的servlet容器。当请求是一个HttpServletRequest对象，容器从URI查询字符串和POST数据中填充参数，ServletRequest接口的下列方法可以返回这些参数：</p>
+<ul>
+<li>getParameter</li>
+<li>getParameterNames</li>
+<li>getParameterValues</li>
+<li>getParameterMap</li>
+</ul>
+<p>属性通过ServletRequest接口的下面方法来访问：</p>
+<ul>
+<li>getAttribute</li>
+<li>getAttributeNames</li>
+<li>setAttribute</li>
+</ul>
+<h2 id="3-2-请求路径元素"><a href="#3-2-请求路径元素" class="headerlink" title="3.2 请求路径元素"></a>3.2 请求路径元素</h2><p>引导servlet服务请求的请求路径由许多重要的部分组成。一下元素从请求URI路径得到，并通过request对象公开：</p>
+<ul>
+<li>Context Path：与ServletContext相关联的路径前缀是这个servlet的一部分。</li>
+<li>Servlet Path：路径部分直接与激活请求的映射对应。</li>
+<li>PathInfo：请求路径的一部分，不属于Context Path或Servlet Path</li>
+</ul>
+<h2 id="3-3-非阻塞IO"><a href="#3-3-非阻塞IO" class="headerlink" title="3.3 非阻塞IO"></a>3.3 非阻塞IO</h2><p>Web容器中的非阻塞请求处理有助于提高对改善Web容器可扩展性不断增加的需求，增加Web容器可同时处理请求的链接数量。servlet容器的非阻塞IO允许开发人员在数据可用时读取或在数据可写时写入数据。非阻塞IO仅对在Servlet和Filter中的异步请求处理和升级处理有效。否则，当调用ServletInputStream.setReadListener或ServletOutputStream.setWriteListener方法是将抛出IllegalStateException。</p>
+<p>ReadListener为非阻塞IO提供了下面的回调方法：</p>
+<ul>
+<li>ReadListener</li>
+<li>onDataAvailable().放可用从传入的请求流中读取数据时ReadListener的onDataAvailable方法被调用。当数据可读时容器初次调用该方法。当且仅当下面描述的ServletInputStream的isReady方法返回false，容器随后将调用onDataAvailable方法。</li>
+<li>onAllDataRead()。当读取完注册了此监听器的ServletRequest的所有数据时调用onAllDataRead()方法。</li>
+<li>onError(Throwable t)。处理请求时如果有任何错误或异常发生调用onError方法。</li>
+</ul>
+<p>容器线程安全的访问ReadListener中的方法。</p>
+<p>除了ReadListener定义的方法外，下列方法已被添加到ServletInputStream类中：</p>
+<ul>
+<li>ServletInputStream</li>
+<li>boolean isFinished()。与ServletReader/ServletInputStream相关的请求的所有数据已经读取玩isFinished方法返回true。否则返回false。</li>
+<li>boolean isReady()。如果可以无阻塞地读取数据isReady方法返回true。如果没有数据可以无阻塞的读取该方法返回false。如果isReady返回返回false，调用read方法是非法发，且必须抛出IllegalStateException。</li>
+<li>void setReadListener(ReadListener listener).</li>
+</ul>
+<h2 id="3-4-SSL属性"><a href="#3-4-SSL属性" class="headerlink" title="3.4 SSL属性"></a>3.4 SSL属性</h2><p>如果请求已经通过一个安全协议发送过，如HTTPS，必须通过ServletRequest接口的isSecure方法公开该信息。Web容器必须公开下了属性给servlet程序员：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性名称</th>
+<th>Java类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>密码套件</td>
+<td>javax.servlet.request.cipher_suite</td>
+<td>String</td>
+</tr>
+<tr>
+<td>算法的位大小</td>
+<td>javax.servlet.request.key_size</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>SSL会话id</td>
+<td>javax.servlet.request.ssl_session_id</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-5-Request对象的生命周期"><a href="#3-5-Request对象的生命周期" class="headerlink" title="3.5 Request对象的生命周期"></a>3.5 Request对象的生命周期</h2><p>每个request对象只在servlet的service方法的作用域内，或过滤器的doFilter方法的作用域内有效，除非该组件启用了异步处理并且调用了request对象的startAsync方法。在发生异步处理的情况下，request对象一直有效，直到调用AsyncContext的complete方法。</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/18/四、Servlet Context/" title="四、Servlet Context">四、Servlet Context</a></h2>
+                <p class="excerpt">
+                
+                四、Servlet Context4.1 ServletContext接口介绍ServletContext(Servlet上下文)接口定义了servlet运行在的Web应用的视图。容器供应商负责提供Servlet容器的ServletContext接口实现。Servlet可以使用ServletCont
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-12-18T03:17:25.000Z" class="post-list__meta--date date">2017-12-18</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/18/四、Servlet Context/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2017/12/13/二、Servlet接口/" title="二、Servlet接口">二、Servlet接口</a></h2>
+                <p class="excerpt">
+                
+                二、Servlet接口Servlet接口是Java Servlet API的核心抽象。所有的Servlet类必须直接或间接的实现该接口。
+2.1 请求处理方法Servlet基础接口定义了用于客户端请求处理的service方法。当有请求到达时，该方法有servlet容器路由到一个servlet实例。
+
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2017-12-13T14:01:34.000Z" class="post-list__meta--date date">2017-12-13</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/Servlet-3-0/">Servlet 3.0</a>
+</span><a class="btn-border-small" href="/2017/12/13/二、Servlet接口/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2017 - 本站使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题,
+        由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+    </span>
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
